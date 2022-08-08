@@ -187,6 +187,7 @@ main:
 	  j while2
 #       }
 	fimWhile2:
+	jr $ra
 #    }
 #
 #    void imprimeLinhaBeirada( int ini, int larg, char ch )
@@ -224,6 +225,7 @@ main:
 	    j while3
 #       }
 	fimWhile3:
+	jr $ra
 #    }
 #
 #    void imprimeBrancos( int ini )
@@ -261,6 +263,7 @@ main:
 	    j while4
 #       }
 	fimWhile4:
+	jr $ra
 #    }
 #
 
