@@ -43,7 +43,7 @@
                         lw $t0, l
                         mul $t0, $t0, 40 # l x 10 colunas x 4 bytes (stride)
                         lw $t1, c
-                        mul $t1, $t1, c # c x 4
+                        mul $t1, $t1, 4 # c x 4
                         add $t0, $t0, $t1 
                         li $t1, 1
                         sw $t1, M($t0)                        
@@ -61,14 +61,14 @@
 #
                   #passo c++
                   lw $t0, c
-                  addi $t0, $t0, c
+                  addi $t0, $t0, 1
                   sw $t0, c
                   jal for2
              fimFor2:
 #            
              #passo l++
              lw $t0, l
-             addi $t0, $t0, l
+             addi $t0, $t0, 1
              sw $t0, l
              jal for1
          fimFor1:
@@ -93,7 +93,7 @@
                   mul $t0, $t0, 4
                   add $t0, $t0, $t1
                   lw $a0, M($t0)
-                  jal imrpimeInt
+                  jal imprimeInt
 #                 imprimeChar (' ');      // Linha 14
                   li $a0, ' '
                   jal imprimeChar
@@ -106,6 +106,8 @@
 #             } // final do terceiro for  // Linha 15
               fimFor4:
 #             imprimeChar ('\n');         // Linha 16
+	          li $a0, '\n'
+	          jal imprimeChar
 
              #passo l++
              lw $t0, l
